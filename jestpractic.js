@@ -6,4 +6,21 @@ function reverseString(str) {
   return str.split("").reverse().join("");
 }
 
-module.exports = { capitalize, reverseString };
+const calculator = {
+  add(a, b) {
+    return a + b;
+  },
+  subtract(a, b) {
+    if (b > a) return "Impossible";
+    else return a - b;
+  },
+  multiply(a, b) {
+    return a * b;
+  },
+  divide(a, b) {
+    if (b === 0) return "Impossible";
+    else return a / b;
+  },
+};
+
+module.exports = { capitalize, reverseString, calculator };

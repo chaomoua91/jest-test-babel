@@ -23,4 +23,29 @@ const calculator = {
   },
 };
 
-module.exports = { capitalize, reverseString, calculator };
+function caesarCipher(str, shiftFactor) {
+  let newString = "";
+
+  for (let i = 0; i < str.length; i++) {
+    let ascii = str.charCodeAt(i);
+    if (
+      (ascii >= 32 && ascii <= 47) ||
+      (ascii >= 58 && ascii <= 64) ||
+      (ascii >= 91 && ascii <= 96)
+    );
+    else {
+      ascii += shiftFactor;
+      if ((ascii > 90 && str.charAt(i) <= "Z") || ascii > 122) ascii -= 26;
+    }
+    newString += String.fromCharCode(ascii);
+  }
+  return newString;
+}
+
+module.exports = {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+};

@@ -42,6 +42,23 @@ function caesarCipher(str, shiftFactor) {
   return newString;
 }
 
+function analyzeArray(arr) {
+  let obj = {};
+  let sum = 0;
+  let minIdx = 0;
+  let maxIdx = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    if (arr[i] < arr[minIdx]) minIdx = i;
+    if (arr[i] > arr[maxIdx]) maxIdx = i;
+  }
+  obj.average = sum / arr.length;
+  obj.min = arr[minIdx];
+  obj.max = arr[maxIdx];
+  obj.length = arr.length;
+  return obj;
+}
+
 module.exports = {
   capitalize,
   reverseString,
